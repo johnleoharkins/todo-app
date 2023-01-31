@@ -1,5 +1,37 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.App-Header{
+  min-height: 6rem;
+  width: 100%;
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  padding-left: 10rem;
+  padding-right: 10rem;
+  /*margin-left: 10rem;*/
+  /*margin-right: 1rem;*/
+  align-items: center;
+  justify-content: space-between;
+  /*overflow: hidden;*/
+  /*flex-flow: nowrap;*/
+}
+
+.App-Header h1{
+  left: 10%;
+  position: fixed;
+}
+
+.App-Header Button{
+  top: 3%;
+  right: 20%;
+  position: fixed;
 }
 
 .App-logo {
