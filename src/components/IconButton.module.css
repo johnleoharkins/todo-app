@@ -1,0 +1,21 @@
+
+
+.IconButton__container{
+    display: flex;
+    position: relative;
+    max-width: 30px;
+    box-sizing: border-box;
+    top: 1rem;
+    right: 1rem;
+    align-self: self-end;
+}
+
+.IconButton__svg{
+    width: 100%;
+}
+
+.IconButton__container:hover{
+    outline: ghostwhite 1px solid;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 10px ghostwhite;
+}
