@@ -36,11 +36,16 @@ function App() {
     setNewTodoList(todos)
   }
 
+  const handleDeleteTodo = (id) => {
+    const todos = todoList.filter((todo) => todo.id !== id);
+    setNewTodoList(todos);
+  }
+
   const showTodoList = () => {
     return todoList.map((todo, i) => {
 
       return (
-          <Todo name={todo.name} desc={todo.desc} id={todo.id} key={todo.id} onUpdateTodo={handleUpdateTodo} />
+          <Todo name={todo.name} desc={todo.desc} id={todo.id} key={todo.id} onUpdateTodo={handleUpdateTodo} onDeleteTodo={handleDeleteTodo} />
       )
     })
   }

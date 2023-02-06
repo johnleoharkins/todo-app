@@ -3,7 +3,7 @@ import classes from "./Todo.module.css";
 import editSvg from "../assets/icons/edit-v1.svg"
 import EditTodoForm from "./EditTodoForm";
 
-const Todo = ({ name, desc, id, onUpdateTodo }) => {
+const Todo = ({ name, desc, id, onUpdateTodo, onDeleteTodo }) => {
     const [editTodo, setEditTodo] = useState(false);
 
     const handleEditToggle = () => {
@@ -28,7 +28,7 @@ const Todo = ({ name, desc, id, onUpdateTodo }) => {
 
     return(
         <div className={classes.todo}>
-            {editTodo ? (<EditTodoForm name={name} desc={desc} id={id} onUpdateTodo={onUpdateTodo} toggleEditTodo={handleEditToggle} />) : todo() }
+            {editTodo ? (<EditTodoForm name={name} desc={desc} id={id} onUpdateTodo={onUpdateTodo} toggleEditTodo={handleEditToggle} onDeleteTodo={onDeleteTodo} />) : todo() }
 
         </div>
     )
