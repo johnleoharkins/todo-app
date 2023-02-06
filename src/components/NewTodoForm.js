@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import classes from "./NewTodoForm.module.css";
-
+import { v4 as uuidv4 } from 'uuid';
 const NewTodoForm = ({addNewTodo}) => {
     const [todoName, setTodoName] = useState('');
     const [todoDesc, setTodoDesc] = useState('');
@@ -15,7 +15,7 @@ const NewTodoForm = ({addNewTodo}) => {
     }
     const submitTodo = (event) => {
         event.preventDefault();
-        addNewTodo(todoName, todoDesc)
+        addNewTodo(todoName, todoDesc, uuidv4())
         setTodoName('')
         setTodoDesc('')
 

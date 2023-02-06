@@ -14,22 +14,33 @@ function App() {
     setNewTodoFormOpen(prevState => !prevState)
   }
 
-  const handleCreateNewTodo = (todoName, todoDesc) => {
+  const handleCreateNewTodo = (todoName, todoDesc, id) => {
     console.log(todoName)
 
     toggleNewTodoForm();
-    setNewTodoList(prevState => [...prevState, {name: todoName, desc: todoDesc}])
+    setNewTodoList(prevState => [...prevState, {name: todoName, desc: todoDesc, id: id}])
   }
 
   const newTodoForm = () => {
     return <NewTodoForm addNewTodo={handleCreateNewTodo} />
   }
 
+  const handleUpdateTodo = (id, name, desc) => {
+    const todos = todoList.map((todo) => {
+      if (todo.id === id){
+        todo.name = name;
+        todo.desc = desc;
+      }
+      return todo
+    });
+    setNewTodoList(todos)
+  }
+
   const showTodoList = () => {
     return todoList.map((todo, i) => {
 
       return (
-          <Todo name={todo.name} desc={todo.desc} key={todo.name + "-" + i} />
+          <Todo name={todo.name} desc={todo.desc} id={todo.id} key={todo.id} onUpdateTodo={handleUpdateTodo} />
       )
     })
   }
